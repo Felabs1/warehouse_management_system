@@ -1,0 +1,16 @@
+.w3-bar {
+  padding: 10px;
+}
+.w3-bar-item {
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.w3-bar-item:hover {
+  color: #f234f2;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+}
