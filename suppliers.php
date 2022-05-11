@@ -190,6 +190,40 @@ if (!isset($_SESSION['email']) && $_SESSION['email'] !== true) {
 
 
         }
+
+        const addProduct = () => {
+            var name = $("#productName");
+            if (name.val() === "") {
+                alert("please fill in the field");
+                return;
+            }
+
+            var obj = {
+                name: name.val()
+            };
+
+
+
+            console.log(JSON.stringify(obj));
+
+            $.ajax({
+                url: "./api/main.php?addproduct=true",
+                method: "POST",
+                data: $("#frmProduct").serialize(),
+                success: (data) => {
+                    // console.log(data);
+                    // data === "success" ? alert("product successfully inserted") : ;
+                    if (data === "success") {
+                        alert("product successfully inserted");
+                    } else if (data === "product_exist") {
+                        alert("the product exists");
+                    } else {
+                        alert("internal server error");
+                        console.log(data);
+                    }
+                }
+            })
+        }
     </script>
 </body>
 

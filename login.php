@@ -23,7 +23,7 @@
             <label for="">email</label>
             <input type="text" id="email" name="email" class="w3-input w3-border w3-round">
             <label for="">password</label>
-            <input type="text" id="password" name="password" class="w3-input w3-border w3-round">
+            <input type="password" id="password" name="password" class="w3-input w3-border w3-round">
             <br>
             <button type="button" onclick="login()" class="w3-button w3-blue w3-round w3-block">Log in</button><br>
         </form>

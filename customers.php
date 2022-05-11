@@ -42,7 +42,7 @@ if (!isset($_SESSION['email']) && $_SESSION['email'] !== true) {
                             Product Name
                         </div>
                         <div class="w3-col l6">
-                            <select name="productName" onchange="fillStuff(this.value)" id="productName" class="w3-select w3-border w3-round">
+                            <select name="productName" onfocus="fillStuff(this.value)" onchange="fillStuff(this.value)" id="productName" class="w3-select w3-border w3-round">
                                 <?php
                                 foreach ($fetch_products as $row) {
                                 ?>
@@ -61,7 +61,7 @@ if (!isset($_SESSION['email']) && $_SESSION['email'] !== true) {
                             buying Price
                         </div>
                         <div class="w3-col l6">
-                            <input type="number" id="buyingPrice" name="buyingPrice" class="w3-input w3-border w3-round">
+                            <input type="number" readonly id="buyingPrice" name="buyingPrice" class="w3-input w3-border w3-round">
                         </div>
                     </div>
                     <div class="w3-row-padding w3-stretch">
@@ -69,7 +69,7 @@ if (!isset($_SESSION['email']) && $_SESSION['email'] !== true) {
                             Selling Price
                         </div>
                         <div class="w3-col l6">
-                            <input type="number" id="sellingPrice" name="sellingPrice" class="w3-input w3-border w3-round">
+                            <input type="number" readonly id="sellingPrice" name="sellingPrice" class="w3-input w3-border w3-round">
                         </div>
                     </div>
                 </div>

@@ -150,9 +150,9 @@ if (!isset($_SESSION['email']) && $_SESSION['email'] !== true) {
         <div class="w3-center" style="display: flex;">
             <br>
             <label for="">Filter</label>&nbsp;&nbsp;
-            <input type="date" style="width: 200px;" class="w3-input w3-border w3-round">&nbsp;
-            <input type="date" style="width: 200px;" class="w3-input w3-border w3-round">
-            &nbsp;<button class="w3-button w3-border w3-round">fiter</button>
+            <input type="date" id="date1" style="width: 200px;" class="w3-input w3-border w3-round">&nbsp;
+            <input type="date" id="date2" style="width: 200px;" class="w3-input w3-border w3-round">
+            &nbsp;<button type="button" onclick="filter()" class="w3-button w3-border w3-round">fiter</button>
         </div><br>
         <div class="w3-center">
             <button class="w3-button w3-blue w3-round" onclick="printDocument('printable')">Print</button>
@@ -175,7 +175,22 @@ if (!isset($_SESSION['email']) && $_SESSION['email'] !== true) {
             $.get('./api/main.php?balance=true', (data) => {
                 $("#account").html(data);
             });
-        }, 2000)
+        }, 2000);
+
+        const filter = () => {
+            var date1 = $("#date1").val();
+            var date2 = $("#date2").val();
+
+            if (date1 === "" || date2 === "") {
+                alert('please fill in the dates to filter');
+                return;
+            }
+
+            $.get(`./api/main.php?date1=${date1}&date2=${date2}`, (data) => {
+                console.log(data);
+                $("#datadiv").html(data);
+            })
+        }
     </script>
 </body>
 

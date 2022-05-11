@@ -96,7 +96,7 @@ if (isset($_GET['deleteEmp'])) {
 }
 
 if (isset($_GET['addproduct'])) {
-    // echo "success";
+    // echo $_POST['productName'];
     $fetch = $crud->fetch_data("SELECT * FROM products WHERE `name` = '" . $_POST['productName'] . "'");
     if (count($fetch) > 0) {
         echo "product_exist";
@@ -248,6 +248,9 @@ if (isset($_GET['login'])) {
     } else {
         echo "invalid_user";
     }
+}
+
+if (isset($_GET['date1'])) {
 }
 
 ?>
